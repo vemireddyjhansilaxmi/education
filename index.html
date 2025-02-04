@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Education Facts</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 25px;
+            background-color: #ff6b6b;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #ff4c4c;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Education Facts</h1>
+        <p id="factDisplay">Click the button to see a random fact!</p>
+        <button id="factButton">Get Random Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Oldest University",
+                "description": "The University of Bologna, founded in 1088, is considered the oldest university in continuous operation in the world."
+            },
+            {
+                "fact": "First Public School",
+                "description": "The first public school in the United States was Boston Latin School, established in 1635."
+            },
+            {
+                "fact": "Global Literacy Rates",
+                "description": "As of recent statistics, the global literacy rate for adults is around 86%, but it varies significantly by region."
+            },
+            {
+                "fact": "Longest School Day",
+                "description": "In Japan, students often have one of the longest school days, with classes typically running from 8:30 AM to 3:30 PM, followed by additional study sessions."
+            },
+            {
+                "fact": "Education and Income",
+                "description": "Studies show that individuals with higher levels of education tend to earn significantly more over their lifetimes compared to those with lower levels of education."
+            },
+            {
+                "fact": "Online Learning Growth",
+                "description": "The rise of online education has been exponential, especially after the COVID-19 pandemic, with millions of students worldwide participating in virtual classrooms."
+            },
+            {
+                "fact": "Montessori Method",
+                "description": "The Montessori method of education, developed by Dr. Maria Montessori, emphasizes hands-on learning and self-directed activity, and is used in schools around the world."
+            },
+            {
+                "fact": "School Colors",
+                "description": "Many schools have specific colors that represent them, often chosen for their significance or to foster school spirit."
+            },
+            {
+                "fact": "Education in Space",
+                "description": "Astronauts on the International Space Station conduct educational outreach programs, teaching students about science and space exploration from orbit."
+            },
+            {
+                "fact": "The Importance of Play",
+                "description": "Research shows that play is an essential part of early childhood education, helping children develop social skills, creativity, and problem-solving abilities."
+            }
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const randomFact = facts[randomIndex];
+            document.getElementById('factDisplay').innerText = `${randomFact.fact}: ${randomFact.description}`;
+        });
+    </script>
+</body>
+</html>
